@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NET-Digit</title>
+        <!-- brain.js does not provide typings for TS yet.. just include from CDN and give "brain" a "any" typing in "typings.d.ts" -->
+        <script src="//unpkg.com/brain.js"></script>
+        <script src="bundle.js" defer></script>        
+    </head>
+    <div style="margin-left: 50px;">
+        <div style="display:flex;">
+            <canvas id="canvas-draw" width="200" height="200" style="border-style: solid"></canvas>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <canvas id="canvas-chart" width="200" height="200" style="border-style: solid;"></canvas>                        
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <canvas id="canvas-mnist" width="200" height="200" style="border-style: solid;"></canvas>
+            <div style="flex-direction: column">
+                <input type="radio" id="custom-net" name="nettype" value="custom-net">
+                <label for="custom-net">Custom</label><br>
+                <input type="radio" id="brainjs-net" name="nettype" value="brainjs-net">
+                <label for="brainjs-net">BrainJS</label><br>
+            </div>    
+        </div>
+        <br />
+        <div style="display: flex;">
+            <button id="predict" type="button">Predict</button>
+            <div>&nbsp;&nbsp;</div>
+            <button id="clear" type="button">Clear</button>
+        </div>
+        <br />
+        <button id="train" type="button">Train</button>
+        <div>&nbsp;</div>
+        <input id="training-file" type="file" />
+        <div>&nbsp;</div>
+        <input id="label-file" type="file" />
+        <br /> <br/>
+        <textarea id="NET" name="NET" rows="10" cols="80"></textarea>
+    </div>
+</html>
